@@ -2,15 +2,17 @@
 global using System.Text.Json;
 global using System.Net;
 
-RestClient pokeClient = new("https://pokeapi.co/api/v2/");
-RestRequest request = new("pokemon/eebee");
-RestResponse response = pokeClient.GetAsync(request).Result;
+RestClient starClient = new("https://swapi.py4e.com/api/");
+RestRequest request = new("people/1/");
+RestResponse response = starClient.GetAsync(request).Result;
 
 if (response.StatusCode == HttpStatusCode.OK)
 {
-    Starwars p = JsonSerializer.Deserialize<Starwars>(response.Content);
-    Console.WriteLine(p.Name);
-    Console.WriteLine(p.Weight);
+    Starwars s = JsonSerializer.Deserialize<Starwars>(response.Content);
+    Console.WriteLine(s.Name);
+    Console.WriteLine(s.Height);
+    Console.WriteLine(s.Mass);
+    Console.WriteLine(s.Gender);
 }
 else Console.WriteLine("you dum. it wrong.");
 

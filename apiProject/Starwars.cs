@@ -3,8 +3,10 @@ public class Starwars
 {
     [JsonPropertyName("name")]
     public string Name { get; set; }
-    [JsonPropertyName("weight")]
-    public int Weight { get; set; }
-    [JsonPropertyName("is_defualt")]
-    public bool IsDefualt { get; set; }
+    [JsonPropertyName("height")]
+    public string Height { get; set; }
+    [JsonPropertyName("mass")]
+    public string Mass { get; set; }
+    [JsonPropertyName("gender")]
+    public string Gender { get; set; }
 }
